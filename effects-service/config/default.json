@@ -1,0 +1,22 @@
+{
+    "Logger": {
+        "appenders": {
+            "console": {
+                "type": "console"
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "console"
+                ],
+                "level": "debug"
+            }
+        }
+    },
+    "db": {
+        "url": "mongodb://127.0.0.1:27017",
+        "db": "Cinema"
+    },
+    "Port": 7009
+}

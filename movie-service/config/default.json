@@ -1,0 +1,23 @@
+{
+    "Logger": {
+        "appenders": {
+            "console": {
+                "type": "console"
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "console"
+                ],
+                "level": "debug"
+            }
+        }
+    },
+    "db": {
+        "url": "mongodb://127.0.0.1:27017",
+        "db": "Cinema"
+    },
+    "effects-url": "http://127.0.0.1:7009/v1/effect",
+    "Port": 7007
+}

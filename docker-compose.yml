@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  database:
+    image: "mongo:4.2.3"
+    container_name: "mongo"     
+    ports:
+      - "27017-27019:27017-27019"
+    restart: always
+    labels:
+      - co.elastic.logs/module=mongodb
+    networks:
+      - cinema
+  movie-service:
+    build:
+      context: ./movie-service
+    image: "movie-service:1.0.0"
+    container_name: "movie-service"     
+    working_dir: /home/skytouch-service
+    ports:
+      - 2777:80
+    environment:
+      - NODE_ENV=test
+    command: npm start
+    restart: always
+    networks:
+      cinema:
+
+  effects-service:
+    build:
+      context: ./effects-service
+    image: "effects-service:1.0.0"
+    container_name: "effects-service"     
+    working_dir: /home/skytouch-service
+    environment:
+      - NODE_ENV=test
+    command: npm start
+    restart: always
+    networks:
+      cinema:
+
+networks:
+  cinema:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.2.0/24

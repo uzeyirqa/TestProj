@@ -1,0 +1,23 @@
+{
+    "Logger": {
+        "appenders": {
+            "console": {
+                "type": "console"
+            },
+            "layout": { "type": "json", "seperator": ",",
+                "static": {
+                    "appName": "sam-service"
+                }
+            }
+        },
+        "categories": {
+            "default": {
+                "level": "info"
+            }
+        }
+    },
+    "db": {
+        "url": "mongodb://database:27017/"
+    },
+    "Port": 80
+}

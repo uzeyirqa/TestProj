@@ -1,0 +1,4 @@
+FROM node:14
+COPY . /home/skytouch-service/
+WORKDIR /home/skytouch-service
+CMD npm start
